@@ -16,7 +16,9 @@ RUN chmod +x /docker-entrypoint-initdb.d/init.sh
 RUN grafana-cli plugins install grafana-postgresql-datasource || true
 
 # Set permissions
-RUN chown -R grafana:grafana /etc/grafana
+#RUN chown -R grafana:grafana /etc/grafana
+# Make sure folder exists (prevent chown error)
+RUN mkdir -p /etc/grafana && chown -R 472:472 /etc/grafana
 
 USER grafana
 
