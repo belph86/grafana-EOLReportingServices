@@ -11,6 +11,15 @@ Pre-configured Grafana container for visualizing test results with dynamic colum
 
 ## Quick Start
 
+### Using Docker directly
+docker run -d \
+  -p 3000:3000 \
+  -e POSTGRES_HOST=your-postgres-host \
+  -e POSTGRES_DB=central_reporting \
+  -e POSTGRES_USER=reporting_user \
+  -e POSTGRES_PASSWORD=your-password \
+  ghcr.io/YOUR_USERNAME/grafana-dynamic-test-dashboard:latest
+
 ### Using Docker Compose (Recommended)
 ```bash
 # Clone the repository
