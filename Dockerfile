@@ -1,5 +1,5 @@
 ### 2.2. `Dockerfile`
-```dockerfile
+
 FROM grafana/grafana:10.2.0
 
 USER root
